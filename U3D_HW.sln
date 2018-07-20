@@ -1,0 +1,20 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "U3D_HW", "Assembly-CSharp.csproj", "{9CF7E727-2E1C-2375-5001-C734E121062B}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{9CF7E727-2E1C-2375-5001-C734E121062B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9CF7E727-2E1C-2375-5001-C734E121062B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9CF7E727-2E1C-2375-5001-C734E121062B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9CF7E727-2E1C-2375-5001-C734E121062B}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
