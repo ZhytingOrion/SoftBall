@@ -10,6 +10,11 @@ public class Ball_MouseMove : MonoBehaviour {
     private Vector2 _oldPos;
     [Range(0, 1)]
     public float Factor = 0.01f;
+    [Range(0, 1)]
+    public float DecayFactor = 0.8f;
+    public float BoundPower = 10.0f;
+
+    public Vector3 StartPos = new Vector3(0, 6, 0);
 
 	// Use this for initialization
 	void Start () {
@@ -52,10 +57,17 @@ public class Ball_MouseMove : MonoBehaviour {
 
     private void OnCollisionEnter(Collision collision)
     {
-        if(collision.gameObject.layer == LayerMask.NameToLayer("Environment"))
+        if(collision.gameObject.layer == LayerMask.NameToLayer("Environment"))  //撞到地面
         {
-            this.EnableDrag = false;
-            this._rigidBody.AddForce(new Vector3(0, 5.0f, 0), ForceMode.Impulse);
+            if (this.EnableDrag)  //将小球变为不可拖动，并再放置一个小球
+            {
+                this.EnableDrag = false;
+                GameObject newBall = (GameObject)Resources.Load("Prefabs/Ball");
+                Instantiate(newBall);
+                newBall.transform.position = StartPos;
+            }
+            this._rigidBody.AddForce(new Vector3(0, BoundPower, 0), ForceMode.Impulse);
+            BoundPower *= DecayFactor;
         }
     }
 }
